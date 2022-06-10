@@ -27,13 +27,12 @@ public class DataJpaController implements Serializable {
     }
     private EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.ktp_project.ktp_jar_0.0.1-SNAPSHOTPU");
 
-    public EntityManager getEntityManager() {
-        return emf.createEntityManager();
-    }
-
     public DataJpaController() {
     }
     
+    public EntityManager getEntityManager() {
+        return emf.createEntityManager();
+    }
 
     public void create(Data data) throws PreexistingEntityException, Exception {
         EntityManager em = null;

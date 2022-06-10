@@ -22,10 +22,13 @@ import javax.persistence.criteria.Root;
  */
 public class DummyJpaController implements Serializable {
 
-    public DummyJpaController() {
-        
+    public DummyJpaController(EntityManagerFactory emf) {
+        this.emf = emf;
     }
     private EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.ktp_project.ktp_jar_0.0.1-SNAPSHOTPU");
+
+    public DummyJpaController() {
+    }
 
     public EntityManager getEntityManager() {
         return emf.createEntityManager();

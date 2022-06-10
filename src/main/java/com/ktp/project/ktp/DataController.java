@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
  * @author User
  */
 @Controller
-@RestController
 public class DataController {
     DataJpaController datactrl = new DataJpaController();
     List<Data> newdata = new ArrayList<>();

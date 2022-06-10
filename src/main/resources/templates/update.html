@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Dummy</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Dummy Update</div>
+        <hr><!-- comment -->
+        <form action="/update" method="POST" enctype="multipart/form-data">
+             <table>
+                <tr>
+                    <td>NIK</td>
+                    <td><input type="text" th:value="${godummy.id}" disabled></td>
+                    <td><input type="hidden" name="id" th:value="${godummy.id}"></td>
+                </tr>
+                 <tr>
+                    <td>Tanggal Lahir</td>
+                    <td><input type="date" name="tanggal_lahir" th:value="${#dates.format(godummy.tanggal,'yyyy-MM-dd')}"></td>
+                </tr>
+                 <tr>
+                    <td>Foto</td>
+                    <td><img th:src="@{${'/image?id='+ godummy.id}}" alt="image" height="500"></td>
+                </tr>
+                <tr>
+                    <td>Ganti Foto</td>
+                    <td><input type="file" name="gambar" th:value="@{godummy.gambar}"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="submit">Submit</button>
+                        <button><a href="/read" class="btn btn-outline-secondary">Back</a></button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
